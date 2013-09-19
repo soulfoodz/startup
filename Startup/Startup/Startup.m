@@ -10,5 +10,21 @@
 
 @implementation Startup
 
+- (id)initWithName:(NSString *)name
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.startupName = name;
+    }
+    
+    return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"This is %@, driven by %@", self.startupName, self.boss];
+}
 
 @end

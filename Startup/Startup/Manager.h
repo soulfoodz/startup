@@ -11,6 +11,7 @@
 @interface Manager : Employee
 
 @property int numberOfDirectReports;
+@property (strong, nonatomic) NSMutableArray *reportingEmployees;
 
 - (id)initWithName:(NSString *)name
           andEmail:(NSString *)email

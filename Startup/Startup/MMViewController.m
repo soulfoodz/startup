@@ -22,14 +22,12 @@
 {
     [super viewDidLoad];
     
-    Manager *bossMan;
     Employee *coderMan;
     Employee *designerMan;
     Employee *projectManagerMan;
-    
-    bossMan = [[Manager alloc] initWithName:@"Eric Webb"
-                                   andEmail:@"eric@mystartup.com"
-                            andEmployeeType:@"Boss"];
+    NSArray *startupEmployees;
+    Manager *bossMan;
+
     
     coderMan = [[Employee alloc] initWithName:@"Mychilo Cline"
                                      andEmail:@"mychilo@mystartup.com"
@@ -43,17 +41,29 @@
                                               andEmail:@"kabir@mystartup.com"
                                        andEmployeeType:@"Project Manager"];
     
+    startupEmployees = @[coderMan, designerMan, projectManagerMan];
+    
+    
+    bossMan = [[Manager alloc] initWithName:@"Eric Webb"
+                                   andEmail:@"eric@mystartup.com"
+                            andEmployeeType:@"Boss"
+                   andNumberOfDirectReports:3];
+
+    [bossMan.reportingEmployees addObjectsFromArray:startupEmployees];
+    
     
     Startup *myStartup;
-    myStartup = [[Startup alloc] init];
+    myStartup = [[Startup alloc] initWithName:@"Mobile Makers"];
     
+    myStartup.boss = bossMan;
+    myStartup.coder = coderMan;
+    myStartup.designer = designerMan;
+    myStartup.projectManager = projectManagerMan;
+    
+    NSLog(@"\n\n- -%@ \n - - - -%@ \n - - - - - - %@\n - - - - - - %@\n - - - - - - %@", myStartup.startupName, myStartup.boss, myStartup.projectManager, myStartup.coder, myStartup.designer);
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end

@@ -34,4 +34,10 @@
     return [self initWithName:@"Unknown" andEmail:@"Unknown" andEmployeeType:@"Unknown"];
 }
 
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@: %@ %@ ", self.type, self.name, self.email];
+}
+
 @end

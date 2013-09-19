@@ -13,10 +13,12 @@
 
 @interface Startup : NSObject
 
+@property (strong, nonatomic) NSString *startupName;
 @property (strong, nonatomic) Manager *boss;
 @property (strong, nonatomic) Employee *projectManager;
 @property (strong, nonatomic) Employee *coder;
 @property (strong, nonatomic) Employee *designer;
 
+- (id)initWithName:(NSString *)name;
 
 @end

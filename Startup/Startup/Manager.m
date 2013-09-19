@@ -14,15 +14,29 @@
 - (id)initWithName:(NSString *)name andEmail:(NSString *)email andEmployeeType:(NSString *)type andNumberOfDirectReports:(int)numberOfReports
 {
     self = [super init];
-        
+    
+    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
+    
     if (self)
     {
         self.name = name;
         self.email = email;
         self.type = type;
         self.numberOfDirectReports = numberOfReports;
+        self.reportingEmployees = mutableArray;
     }
     return self;
 }
+
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@: %@ %@ reported to by: %i", self.type, self.name, self.email, self.numberOfDirectReports];
+}
+
+//- (void)reportingEmployees
+//{
+//    NSDictionary *reportingEmployeesDict = [[NSDictionary alloc] initWithObjectsAndKeys: , nil]
+//}
 
 @end
