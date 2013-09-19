@@ -19,13 +19,10 @@
     NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
     
     if (self)
-    {
-        // self.name = name;
-        // self.email = email;
-        // self.type = type;
+        {
         self.numberOfDirectReports = numberOfReports;
         self.reportingEmployees = mutableArray;
-    }
+        }
     return self;
 }
 
@@ -35,9 +32,5 @@
     return [NSString stringWithFormat:@"%@: %@ %@ reported to by: %i", self.type, self.name, self.email, self.numberOfDirectReports];
 }
 
-//- (void)reportingEmployees
-//{
-//    NSDictionary *reportingEmployeesDict = [[NSDictionary alloc] initWithObjectsAndKeys: , nil]
-//}
 
 @end
