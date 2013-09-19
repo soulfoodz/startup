@@ -12,7 +12,12 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *email;
+@property (nonatomic) int age;
 
-- (id)initWithName:(NSString *)name andEmail:(NSString *)email;
++ (Person *)copy:(Person *)personToCopy;
+
+// Designated initializer
+- (id)initWithName:(NSString *)name andEmail:(NSString *)email andAge:(int)age;
+- (int)age;
 
 @end

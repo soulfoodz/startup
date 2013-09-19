@@ -7,21 +7,22 @@
 //
 
 #import "Manager.h"
+#import "Employee.h"
 
 @implementation Manager
 
 
-- (id)initWithName:(NSString *)name andEmail:(NSString *)email andEmployeeType:(NSString *)type andNumberOfDirectReports:(int)numberOfReports
+- (id)initWithName:(NSString *)name andEmail:(NSString *)email andAge:(int)age andEmployeeType:(NSString *)type andNumberOfDirectReports:(int)numberOfReports
 {
-    self = [super init];
+    self = [super initWithName:name andEmail:email andAge:age andEmployeeType:type];
     
     NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
     
     if (self)
     {
-        self.name = name;
-        self.email = email;
-        self.type = type;
+        // self.name = name;
+        // self.email = email;
+        // self.type = type;
         self.numberOfDirectReports = numberOfReports;
         self.reportingEmployees = mutableArray;
     }

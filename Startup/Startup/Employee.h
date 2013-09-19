@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *type;
 
-- (id)initWithName:(NSString *)name andEmail:(NSString *)email andEmployeeType:(NSString *)type;
+// The designated initializer
+- (id)initWithName:(NSString *)name andEmail:(NSString *)email andAge:(int)age andEmployeeType:(NSString *)type;
 
 @end

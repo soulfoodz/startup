@@ -9,20 +9,14 @@
 #import "Employee.h"
 
 @implementation Employee
-{
-    NSArray *employeeTypes;
-}
 
-- (id)initWithName:(NSString *)name andEmail:(NSString *)email andEmployeeType:(NSString *)type
+
+- (id)initWithName:(NSString *)name andEmail:(NSString *)email andAge:(int)age andEmployeeType:(NSString *)type
 {
-    self = [super init];
-    
-    // employeeTypes = @[@"boss", @"project manager", @"coder", @"designer"];
-    
+    self = [super initWithName:name andEmail:email andAge:age];
+        
     if (self)
         {
-        self.name = name;
-        self.email = email;
         self.type = type;
         }
     return self;
@@ -31,7 +25,7 @@
 
 - (id)init
 {
-    return [self initWithName:@"Unknown" andEmail:@"Unknown" andEmployeeType:@"Unknown"];
+    return [self initWithName:@"Unknown" andEmail:@"Unknown" andAge:0 andEmployeeType:@"Unknown"];
 }
 
 

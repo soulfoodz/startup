@@ -15,6 +15,7 @@
 
 - (id)initWithName:(NSString *)name
           andEmail:(NSString *)email
+            andAge:(int)age
    andEmployeeType:(NSString *)type
 andNumberOfDirectReports:(int)numberOfReports;
 

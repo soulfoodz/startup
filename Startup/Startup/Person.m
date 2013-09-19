@@ -10,8 +10,20 @@
 
 @implementation Person
 
+@synthesize age = _age;
 
-- (id)initWithName:(NSString *)name andEmail:(NSString *)email
+
++ (Person *)copy:(Person *)personToCopy
+{
+    Person *newPerson;
+    
+    newPerson = [[Person alloc] initWithName:personToCopy.name andEmail:personToCopy.email andAge:personToCopy.age];
+    
+    return newPerson;
+}
+
+
+- (id)initWithName:(NSString *)name andEmail:(NSString *)email andAge:(int)age
 {
     self = [super init];
     
@@ -19,8 +31,21 @@
     {
         self.name = name;
         self.email = email;
+        self.age = age;
     }
     return self;
 }
+
+- (id)init
+{
+    return self = [[Person alloc] initWithName:@"unknown" andEmail:@"unknown" andAge:0];
+}
+
+
+- (int)age
+{
+    return (_age > 50) ? 21 : _age;
+}
+
 
 @end
